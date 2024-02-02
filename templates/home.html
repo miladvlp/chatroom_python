@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form method="post" class="buttons">
+    <h3>نام گروه را بنویسید</h3>
+    <div>
+      <label>نام:</label>
+      <input type="text" placeholder="نام خود را وارد کنید!" name="name" value="{{ name }}" />
+    </div>
+    <div class="join">
+      <input type="text" placeholder="نام گروه را وارد کنید" name="code" value="{{ code }}" />
+      <button type="submit" name="join">یوستن کردن گروه</button>
+    </div>
+    <button type="submit" name="create" class="create-btn">ایجاد کردن گروه</button>
+    {%if error%}
+    <ul>
+      <li>{{error}}</li>
+    </ul>
+    {% endif %}
+  </form>
+{% endblock %}
